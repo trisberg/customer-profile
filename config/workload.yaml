@@ -10,8 +10,49 @@ metadata:
 spec:
   build:
     env:
-      - name: BP_JVM_VERSION
-        value: "17"
+    - name: BP_JVM_VERSION
+      value: "17"
+    - name: BP_NATIVE_IMAGE
+      value: "true"
+    - name: BP_MAVEN_ACTIVE_PROFILES
+      value: "native"
+    - name: MANAGEMENT_HEALTH_PROBES_ENABLED
+      value: "true"
+    - name: MANAGEMENT_ENDPOINT_HEALTH_PROBES_ADD_ADDITIONAL_PATHS
+      value: "true"
+    - name: MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS
+      value: always
+    - name: MANAGEMENT_ENDPOINTS_WEB_BASE_PATH
+      value: /actuator
+    - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+      value: '*'
+    - name: MANAGEMENT_SERVER_PORT
+      value: "8081"
+    - name: SERVER_PORT
+      value: "8080"
+    - name: SERVICE_BINDING_ROOT
+      value: /bindings
+    - name: ORG_SPRINGFRAMEWORK_CLOUD_BINDINGS_BOOT_ENABLE
+      value: "true"
+  env:
+  - name: MANAGEMENT_HEALTH_PROBES_ENABLED
+    value: "true"
+  - name: MANAGEMENT_ENDPOINT_HEALTH_PROBES_ADD_ADDITIONAL_PATHS
+    value: "true"
+  - name: MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS
+    value: always
+  - name: MANAGEMENT_ENDPOINTS_WEB_BASE_PATH
+    value: /actuator
+  - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+    value: '*'
+  - name: MANAGEMENT_SERVER_PORT
+    value: "8081"
+  - name: SERVER_PORT
+    value: "8080"
+  - name: SERVICE_BINDING_ROOT
+    value: /bindings
+  - name: ORG_SPRINGFRAMEWORK_CLOUD_BINDINGS_BOOT_ENABLE
+    value: "true"
   params:
     - name: annotations
       value:
